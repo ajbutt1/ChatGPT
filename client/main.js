@@ -1,5 +1,5 @@
 import bot from '../client/assets/bot.svg'
-import bot from '../client/assets/user.svg'
+import user from '../client/assets/user.svg'
 
 const form = document.querySelector('form')
 const chatContainer = document.querySelector("#chat_container")
@@ -43,7 +43,7 @@ function generateUniqueId(){
 }
 
 //...implementing chat to show AI and Person 
-function chatStripe(isAI, value, uniqueId){
+function chatStripe(isAi, value, uniqueId){
   return(
 `    
     <div class="wrapper ${isAi && 'ai'}">
@@ -74,4 +74,20 @@ const handleSubmit =(e) => {
   form.reset()
 
   //..bots chat stripe 
+  const uniqueId = generateUniqueId()
+  chatContainer.innerHTML += chatStripe(true, " ", uniqueId)
+
+  chatContainer.scrollTop = chatContainer.scrollHeight
+
+  //..fetch the div
+  const messageDiv = document.getElementById(uniqueId)
+
+  loader(messageDiv)
 }
+
+form.addEventListener('submit', handleSubmit)
+form.addEventListener('keyup', (e)=> {
+  if(e.keyCode === 13) {
+    handleSubmit(e)
+  }
+})
