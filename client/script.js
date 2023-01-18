@@ -84,6 +84,8 @@ const handleSubmit = async (e) => {
 
   loader(messageDiv)
 
+  //..https://chatai-nrzl.onrender.com/
+
   //..fetch data from server -- bot's response 
   const response = await fetch('https://chatai-nrzl.onrender.com/', {
     method: 'POST',
