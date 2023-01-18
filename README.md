@@ -1,10 +1,4 @@
-# ChatGPT clone with DALL.E image generation model
 
-*you can checkout the app [here](https://chatgpt.eyucoder.com/)*
-
-> a demo of the App
-
-  <img src="screenshots/demo.gif" width="800px" alt="android icon"/>
 
 **Give it a ⭐ if you liked it 😜**
 
